@@ -8,10 +8,19 @@
     <servlet-name>AddCandidate</servlet-name>
     <servlet-class>com.kelia.servlets.addCandidateServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Vote</servlet-name>
+    <servlet-class>com.kelia.servlets.VoteServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>AddCandidate</servlet-name>
     <url-pattern>/addCandidate</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Vote</servlet-name>
+    <url-pattern>/vote</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>
