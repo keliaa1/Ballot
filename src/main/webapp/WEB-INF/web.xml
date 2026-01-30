@@ -12,6 +12,10 @@
     <servlet-name>Vote</servlet-name>
     <servlet-class>com.kelia.servlets.VoteServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <servlet-class>com.kelia.servlets.ResultServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>AddCandidate</servlet-name>
@@ -20,6 +24,10 @@
   <servlet-mapping>
     <servlet-name>Vote</servlet-name>
     <url-pattern>/vote</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/results</url-pattern>
   </servlet-mapping>
 
 
