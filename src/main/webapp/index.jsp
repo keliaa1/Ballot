@@ -1,4 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%
+    if (session != null && session.getAttribute("username") != null) {
+%>
+    <p>
+        Welcome, <b><%= session.getAttribute("username") %></b> |
+        <a href="logout">Logout</a>
+    </p>
+<%
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
