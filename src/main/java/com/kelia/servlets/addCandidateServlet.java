@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,8 +17,18 @@ public class addCandidateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+
+        if (session == null || !"ADMIN".equals(session.getAttribute("role"))) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied");
+            response.sendRedirect("login.jsp");
+
+            return;
+        }
+
 
         String name = request.getParameter("name");
+
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
