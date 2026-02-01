@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+
 <h2>Login</h2>
 
 <form action="login" method="post">
